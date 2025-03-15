@@ -15,4 +15,48 @@ canvas {
   left: 0;
   width: 100vw;
   height: 100vh;
+  z-index: 0;
+}
+
+#settings {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background-color: rgba(50, 50, 50, 0.8); /* Transparent dark grey */
+  border: 2px solid #444; /* Darker grey border */
+  border-radius: 10px;
+  padding: 15px;
+  width: 250px;
+  z-index: 10;
+  box-sizing: border-box;
+}
+
+.setting-row {
+  margin-bottom: 10px;
+}
+
+.setting-row label {
+  color: #fff;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.setting-row input, .setting-row select {
+  width: 100%; /* Make sure it takes up the full width of the container */
+  max-width: 100%; /* Ensure it doesn't overflow */
+  padding: 10px;
+  border: 1px solid #555;
+  border-radius: 5px;
+  background-color: rgba(100, 100, 100, 0.7); /* Transparent dark grey for input and select */
+  color: #fff;
+  box-sizing: border-box; /* Include padding and border in the width calculation */
+}
+
+.setting-row input:focus, .setting-row select:focus {
+  outline: none;
+  border-color: #fff;
+}
+
+.setting-row input, .setting-row select {
+  font-size: 16px;
 }
