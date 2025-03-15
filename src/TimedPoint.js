@@ -7,7 +7,7 @@ export class TimedPoint {
         this.startTime = performance.now(); // Get start time
 
         // Create a transparent material for the point
-        const geometry = new THREE.SphereGeometry(0.03, 3, 3); // Small sphere
+        const geometry = new THREE.SphereGeometry(0.2, 8, 8); // Small sphere
         const material = new THREE.MeshBasicMaterial({ color: 0xffffff, transparent: true, opacity: 1.0 });
 
 

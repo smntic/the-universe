@@ -1,6 +1,6 @@
 import * as THREE from 'three';
 
-const planeDist = 10;
+const planeDist = 40;
 
 function getCameraDirection(camera) {
     return camera.getWorldDirection(new THREE.Vector3()).normalize();
