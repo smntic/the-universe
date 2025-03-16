@@ -23,13 +23,13 @@ camera.position.z = 50;
 camera.rotation.x = -0.4;
 
 // Create light
-const directionalLight = new THREE.DirectionalLight(0xffffff, 2);
+const directionalLight = new THREE.DirectionalLight(0xffffff, 4);
 directionalLight.position.set(-1500, 1500, 1500)
 directionalLight.castShadow = true;
 scene.add(directionalLight);
 
 // Create ambient light
-const ambientLight = new THREE.AmbientLight(0xffffff, 0.1);
+const ambientLight = new THREE.AmbientLight(0xffffff, 0.2);
 scene.add(ambientLight);
 
 // Create renderer
@@ -295,5 +295,5 @@ window.addEventListener('resize', () => {
 
 animate();
 
-addStars(scene, 50);
+addStars(scene, 1000);
 setInterval(addPoints, 100);
