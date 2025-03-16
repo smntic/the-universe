@@ -218,8 +218,16 @@ function updatePoints() {
 function addObject(start, direction, mesh, mass) {
     const rotation = new THREE.Vector3().random();
     const angularVelocity = THREE.MathUtils.randFloat(0.5, 1.5);
-    direction = direction.clone().multiplyScalar(10);
+    direction = direction.clone().multiplyScalar(5);
     objects.push(new PhysicsObject(scene, mesh, start, direction, rotation, angularVelocity, mass, false));
+}
+
+// Reset objects
+function reset() {
+    objects.forEach((obj) => {
+        obj.delete(scene);
+    })
+    objects.length = 0;
 }
 
 function getCurrentObject() {
@@ -291,6 +299,11 @@ window.addEventListener('resize', () => {
     camera.aspect = width / height;
     camera.updateProjectionMatrix();
     controls.update();
+});
+
+const resetButton = document.getElementById('resetButton');
+resetButton.addEventListener('click', () => {
+    reset();
 });
 
 animate();

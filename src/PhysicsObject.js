@@ -50,4 +50,8 @@ export class PhysicsObject {
         this.mesh.position.copy(this.position);
         this.mesh.rotation.setFromQuaternion(this.rotationQuaternion);
     }
+
+    delete(scene) {
+        scene.remove(this.mesh);
+    }
 };
