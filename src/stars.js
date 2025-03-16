@@ -7,8 +7,16 @@ export function addStars(scene, count) {
 }
 
 function addStar(scene) {
-    const geometry = new THREE.SphereGeometry(1.0, 3, 3);
-    const material = new THREE.MeshStandardMaterial( {color: 0xffffff} )
+    const geometry = new THREE.SphereGeometry(0.25, 3, 3);
+
+    const pastelColors = ['#FCEDB1', '#E7DDFF', '#FF9999']
+    const randomColor = pastelColors[Math.floor(Math.random() * pastelColors.length)];
+
+    const material = new THREE.MeshStandardMaterial({
+        color: randomColor,
+        emissive: randomColor,
+        emissiveIntensity: 1.0
+    })
     const star = new THREE.Mesh(geometry, material);
 
     const [x, y, z] = Array(3).fill().map(() => THREE.MathUtils.randFloatSpread(300));
